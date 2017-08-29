@@ -3,13 +3,13 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var px2rem = require('postcss-px2rem');
-
 var config = {
   entry: {
-    common: './js/index.js',
-    insurance: './js/page/insurance.js',
-    loan: './js/page/loan.js'
+    index: './js/index.js',
+    serv: './js/page/serv.js',
+    tech: './js/page/tech.js',
+    about: '/js/page/about.js',
+    job: '/js/page/job.js'
   },
   output: {
     filename: '[name].js',
@@ -24,13 +24,6 @@ var config = {
           use: [
             {
               loader: "css-loader"
-            }, {
-              loader: "px2rem-loader",
-              options: {
-                remUnit: 10
-              }
-            }, {
-              loader: 'postcss-loader'
             }, {
               loader: "sass-loader"
             },
